@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+const products = [
+  ['Queijos Especiais','Canastra, parmesão maturado, brie, gorgonzola e opções premiadas.','/images/prod-cheese.webp','Mais pedido'],
+  ['Queijos Recheados','Queijos artesanais com recheios cremosos, doces e combinações marcantes.','/images/prod-stuffed.webp','Em destaque'],
+  ['Kits Presenteáveis','Caixas e cestas elegantes prontas para surpreender com bom gosto.','/images/prod-kit.webp','Para presente'],
+  ['Cachaças e Licores','Seleção premium de destilados artesanais e licores finos.','/images/prod-drink.webp',''],
+  ['Doces e Manteigas','Geleias, doce de leite, manteigas especiais e acompanhamentos.','/images/prod-sweet.webp',''],
+  ['Tábuas para Receber','Tábuas de frios montadas com cuidado para eventos e encontros.','/images/prod-board.webp','']
+];
+const benefits = [
+  ['✓','Curadoria Premium','Produtos selecionados de pequenos produtores e marcas artesanais.'],
+  ['☎','Atendimento Direto','Você fala pelo WhatsApp para tirar dúvidas e receber sugestões.'],
+  ['⏱','Entrega Rápida','Entrega em Maceió-AL com cuidado para o produto chegar perfeito.'],
+  ['🎁','Pronto para Presentear','Kits e embalagens sofisticadas para datas especiais.']
+];
+const deps = [
+  ['Produtos muito bem selecionados. A tábua que encomendei estava impecável, queijos fresquíssimos.','Mariana T.','Ponta Verde'],
+  ['Entrega rápida em Maceió e atendimento super atencioso. O kit perfeito para presentear.','Carlos E.','Jatiúca'],
+  ['Qualidade excelente! O queijo canastra recheado é uma das melhores coisas que já provei.','Fernanda R.','Farol']
+];
+---
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Casa Gusto | Queijos, kits e sabores selecionados em Maceió</title>
+  <meta name="description" content="Queijos selecionados, kits presenteáveis, cachaças, licores e doces com entrega em Maceió-AL. Peça pelo WhatsApp." />
+  <link rel="icon" href="/favicon.svg" />
+  <meta property="og:title" content="Casa Gusto" />
+  <meta property="og:description" content="Elegância que se prova. Queijos e kits selecionados em Maceió." />
+  <meta property="og:image" content="/opengraph.jpg" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#">CASA GUSTO</a>
+    <nav class="links" aria-label="Menu principal">
+      <a href="#produtos">Produtos</a><a href="#kits">Kits</a><a href="#sobre">A Casa</a><a href="#corporativo">Corporativo</a><a href="#faq">FAQ</a>
+    </nav>
+    <button class="btn header-btn" data-whatsapp="Header" data-message="Olá, vim pelo site da Casa Gusto e quero conhecer os produtos disponíveis.">☎ Pedir agora</button>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-bg"><img src="/images/hero.webp" alt="Mesa gourmet com queijos" width="1400" height="1400" loading="eager" /></div>
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">📍 Maceió, AL</span>
+      <h1>Queijos, kits e sabores selecionados para <span>momentos especiais</span></h1>
+      <p class="lead">Curadoria premium de queijos artesanais, charcutaria, licores e doces. Entrega rápida em Maceió com atendimento direto pelo WhatsApp.</p>
+      <div class="actions">
+        <button class="btn" data-whatsapp="Hero" data-message="Olá, vim pelo site da Casa Gusto e quero conhecer os produtos disponíveis.">☎ Pedir pelo WhatsApp</button>
+        <a class="btn outline" href="#produtos">Ver kits e sugestões ›</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="arch"><img src="/images/hero.webp" alt="Tábua gourmet Casa Gusto" width="900" height="1125" /></div>
+      <div class="quote"><div class="stars">★★★★★</div><strong>“A melhor curadoria de Maceió. Os queijos são excepcionais.”</strong></div>
+    </div>
+  </div>
+</section>
+<section id="produtos" class="section card">
+  <div class="container">
+    <div class="center"><h2>Nossa Curadoria</h2><p class="sub">Produtos artesanais selecionados para garantir uma experiência gastronômica memorável.</p></div>
+    <div class="grid products">
+      {products.map(([title,desc,img,badge]) => <article class="product"><div class="pic"><img src={img} alt={title} loading="lazy" width="700" height="525" />{badge && <span class="tag">{badge}</span>}<button class="share" data-share={title} data-desc={desc} aria-label={`Compartilhar ${title}`}>↗</button></div><div class="product-body"><h3>{title}</h3><p>{desc}</p><button class="btn outline" data-whatsapp={`Produto: ${title}`} data-message={`Olá, tenho interesse no produto: ${title}. Pode me mandar os valores e opções?`}>Quero esse pelo WhatsApp</button></div></article>)}
+    </div>
+  </div>
+</section>
+<section id="kits" class="section">
+  <div class="container kitbox">
+    <div class="kitgrid">
+      <div>
+        <h2>Monte seu Kit Ideal</h2><p class="sub" style="margin-left:0">Diga o que precisa e montaremos uma sugestão adequada ao seu gosto e orçamento.</p>
+        <form id="kitForm">
+          <label>Qual a ocasião?</label><div class="choices" data-group="occasion"><button type="button" class="choice">Presente</button><button type="button" class="choice">Fim de semana</button><button type="button" class="choice">Jantar</button><button type="button" class="choice">Evento</button><button type="button" class="choice">Happy Hour</button></div>
+          <label>O que não pode faltar?</label><div class="choices" data-group="type"><button type="button" class="choice">Queijos especiais</button><button type="button" class="choice">Doces</button><button type="button" class="choice">Bebidas</button><button type="button" class="choice">Charcutaria</button><button type="button" class="choice">Kit misto completo</button></div>
+          <label>Faixa de valor aproximada?</label><div class="choices" data-group="price"><button type="button" class="choice">Até R$ 150</button><button type="button" class="choice">R$ 150 a R$ 300</button><button type="button" class="choice">Acima de R$ 300</button></div>
+          <button class="btn" style="width:100%" type="submit">☎ Receber sugestão pelo WhatsApp</button>
+        </form>
+      </div>
+      <div class="kit-img"><img src="/images/gal-1.webp" alt="Kit Casa Gusto" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+<section id="sobre" class="section card"><div class="container grid two"><div><h2>Por que comprar na Casa Gusto</h2>{benefits.map(([i,t,d])=><div class="benefit"><div class="ico">{i}</div><div><h4>{t}</h4><p>{d}</p></div></div>)}</div><div id="corporativo" class="form"><h2 style="font-size:32px">Kits para presentes e empresas</h2><p class="small">Montamos opções para datas especiais, brindes corporativos e eventos.</p><form id="leadForm"><label>Seu nome</label><input name="name" required placeholder="Como prefere ser chamado?" /><label>Seu WhatsApp</label><input name="phone" required inputmode="numeric" placeholder="(82) 98805-8920" maxlength="15" /><label>O que você procura?</label><input name="need" required placeholder="Ex: 50 kits de Natal para funcionários" /><label>Observações adicionais</label><textarea name="obs" placeholder="Restrições, data ou orçamento em mente?"></textarea><button class="btn" style="width:100%;margin-top:16px" type="submit">Solicitar orçamento pelo WhatsApp →</button></form></div></div></section>
+<section class="section"><div class="container"><div class="center"><h2>O que dizem nossos clientes</h2><p class="sub">A elegância que se prova no paladar e no atendimento.</p></div><div class="grid testimonials">{deps.map(([text,author,loc])=><article class="depo"><div class="stars">★★★★★</div><p>“{text}”</p><strong>{author}</strong><br/><span class="small">{loc}</span></article>)}</div></div></section>
+<section class="section card"><div class="container"><div style="display:flex;align-items:end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:28px"><div><h2>Inspire-se</h2><p class="small">Acompanhe novidades no Instagram</p></div><a class="btn outline" href="https://instagram.com/_casagusto_" target="_blank" rel="noreferrer">Instagram @_casagusto_</a></div><div class="grid gallery">{['/images/gal-1.webp','/images/gal-2.webp','/images/gal-3.webp','/images/hero.webp'].map(img=><a href="https://instagram.com/_casagusto_" target="_blank" rel="noreferrer"><img src={img} alt="Galeria Casa Gusto" loading="lazy" /></a>)}</div></div></section>
+<section id="faq" class="section"><div class="container" style="max-width:820px"><div class="center"><h2>Perguntas Frequentes</h2><p class="sub">Tudo o que você precisa saber antes de fazer seu pedido.</p></div><details><summary>Como funciona a entrega em Maceió?</summary><p>Após confirmar o pedido pelo WhatsApp, combinamos endereço e prazo, com opções conforme região e disponibilidade.</p></details><details><summary>Quais formas de pagamento vocês aceitam?</summary><p>Pix, cartão de crédito e débito, combinado diretamente no atendimento.</p></details><details><summary>Qual o prazo para receber meu pedido?</summary><p>Pedidos feitos até o início da tarde costumam ser entregues no mesmo dia. Kits maiores devem ser encomendados com antecedência.</p></details><details><summary>Os produtos vêm com embalagem para presente?</summary><p>Sim. Kits e tábuas podem ir com apresentação sofisticada para presentear.</p></details><details><summary>Vocês fazem kits para empresas e eventos?</summary><p>Sim. Montamos kits sob medida para empresas, eventos e datas comemorativas.</p></details></div></section>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><div class="brand">CASA GUSTO</div><p class="small">Elegância que se prova. Entregas em Maceió – AL.</p></div><button class="admin" id="openStats" type="button">estatísticas locais</button></div></footer>
+<button class="btn floating" data-whatsapp="Botão Flutuante" data-message="Olá, vim pelo site da Casa Gusto e quero conhecer os produtos disponíveis." aria-label="Pedir pelo WhatsApp">☎</button><div class="stats-panel" id="statsPanel"><strong>Cliques no WhatsApp</strong><div id="statsContent" class="small" style="margin:10px 0"></div><button class="btn outline" id="clearStats" type="button">Limpar</button></div>
+<script>
+const WHATSAPP='5582988058920', KEY='casa-gusto-whatsapp-clicks';
+const msgLink=m=>`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(m)}`;
+function track(label){try{const s=JSON.parse(localStorage.getItem(KEY)||'{}');s[label]=(s[label]||0)+1;localStorage.setItem(KEY,JSON.stringify(s))}catch{}}
+function openWA(message,label){track(label);window.open(msgLink(message),'_blank','noopener')}
+document.querySelectorAll('[data-whatsapp]').forEach(el=>el.addEventListener('click',()=>openWA(el.dataset.message,el.dataset.whatsapp)));
+document.querySelectorAll('.choices').forEach(group=>group.addEventListener('click',e=>{if(e.target.matches('.choice')){group.querySelectorAll('.choice').forEach(b=>b.classList.remove('active'));e.target.classList.add('active')}}));
+document.getElementById('kitForm').addEventListener('submit',e=>{e.preventDefault();const get=g=>document.querySelector(`[data-group="${g}"] .active`)?.textContent;if(!get('occasion')||!get('type')||!get('price')) return alert('Selecione as três opções para montar o kit.');openWA(`Olá, Casa Gusto! Gostaria de montar um kit.\n\nOcasião: ${get('occasion')}\nTipo: ${get('type')}\nValor desejado: ${get('price')}\n\nPodem me enviar opções?`,'Monte seu Kit')});
+document.querySelector('input[name="phone"]').addEventListener('input',e=>{let d=e.target.value.replace(/\D/g,'').slice(0,11);e.target.value=d.length<=2?`(${d}`:d.length<=6?`(${d.slice(0,2)}) ${d.slice(2)}`:d.length<=10?`(${d.slice(0,2)}) ${d.slice(2,6)}-${d.slice(6)}`:`(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}`});
+document.getElementById('leadForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.currentTarget), phone=String(f.get('phone')).replace(/\D/g,''); if(phone.length<10) return alert('Informe um WhatsApp válido.');openWA(`Olá, meu nome é ${f.get('name')}.\n\nMeu WhatsApp: ${f.get('phone')}\nEstou procurando: ${f.get('need')}\nObservações: ${f.get('obs')||''}\n\nGostaria de mais informações.`,'Formulário Corporativo')});
+document.querySelectorAll('[data-share]').forEach(el=>el.addEventListener('click',async()=>{const text=`${el.dataset.share} - ${el.dataset.desc}\n\nConfira na Casa Gusto:`; if(navigator.share){try{return await navigator.share({title:`Casa Gusto | ${el.dataset.share}`,text,url:location.href})}catch{}} window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text+' '+location.href)}`,'_blank')}));
+openStats.onclick=()=>{statsPanel.classList.toggle('open');let s={};try{s=JSON.parse(localStorage.getItem(KEY)||'{}')}catch{};statsContent.innerHTML=Object.keys(s).length?Object.entries(s).map(([k,v])=>`${k}: <strong>${v}</strong>`).join('<br>'):'Sem cliques registrados neste navegador.'};
+clearStats.onclick=()=>{localStorage.removeItem(KEY);statsContent.textContent='Sem cliques registrados neste navegador.'};
+</script>
+</body></html>
