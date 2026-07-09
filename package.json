@@ -12,5 +12,8 @@
     "@astrojs/sitemap": "latest",
     "astro": "latest"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "allowScripts": {
+    "esbuild@0.28.1": true
+  }
 }

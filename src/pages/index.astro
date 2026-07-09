@@ -1,13 +1,858 @@
 ---
 import '../styles/global.css';
 const products = [
-  ['Queijos Especiais','Canastra, parmesão maturado, brie, gorgonzola e opções premiadas.','/images/prod-cheese.webp','Mais pedido'],
-  ['Queijos Recheados','Queijos artesanais com recheios cremosos, doces e combinações marcantes.','/images/prod-stuffed.webp','Em destaque'],
-  ['Kits Presenteáveis','Caixas e cestas elegantes prontas para surpreender com bom gosto.','/images/prod-kit.webp','Para presente'],
-  ['Cachaças e Licores','Seleção premium de destilados artesanais e licores finos.','/images/prod-drink.webp',''],
-  ['Doces e Manteigas','Geleias, doce de leite, manteigas especiais e acompanhamentos.','/images/prod-sweet.webp',''],
-  ['Tábuas para Receber','Tábuas de frios montadas com cuidado para eventos e encontros.','/images/prod-board.webp','']
+  {
+    "title": "Doce de Leite em Pedaços com Cocada e Cacau",
+    "category": "Doces Artesanais",
+    "desc": "Cubos de doce de leite artesanal com cocada e cacau, perfeitos para cafés, sobremesas e presentes.",
+    "detail": "Uma combinação indulgente entre o doce de leite em pedaços, a textura da cocada e o toque marcante do cacau. É o tipo de doce que valoriza a mesa do café, funciona muito bem como sobremesa e também compõe presentes gourmet com queijos, castanhas e bebidas.",
+    "weight": "400 g",
+    "price": "R$ 29,00",
+    "image": "/images/produtos/doce-leite-cocada-cacau.webp",
+    "tag": "Doce artesanal",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Doce de leite em pedaços",
+      "Cocada",
+      "Cacau"
+    ],
+    "highlights": [
+      "Textura em cubos, fácil de servir",
+      "Sabor equilibrado entre leite, coco e cacau",
+      "Ótimo para café da tarde e sobremesas"
+    ],
+    "pairings": [
+      "Café especial",
+      "Cachaça premium",
+      "Parmesão fresco",
+      "Castanhas"
+    ],
+    "serving": [
+      "Sirva levemente resfriado para manter a firmeza dos cubos.",
+      "Monte uma tábua doce com café, nozes e frutas secas.",
+      "Também funciona como mimo gourmet para presentear."
+    ],
+    "suggestions": [
+      "Queijo Parmesão Fresco",
+      "Cachaça Alpha",
+      "Doce de Leite em Pedaços com Nozes"
+    ]
+  },
+  {
+    "title": "Queijo Trufado com Requeijão e Azeitona",
+    "category": "Queijos Trufados",
+    "desc": "Queijo artesanal recheado com requeijão cremoso e azeitonas, ideal para tábuas e aperitivos.",
+    "detail": "Um queijo de presença: massa macia, recheio cremoso e o sabor salino das azeitonas. É uma escolha certeira para abrir uma tábua de frios com personalidade, acompanhando pães, geleias e bebidas especiais.",
+    "weight": "aprox. 550 g",
+    "price": "R$ 60,00",
+    "image": "/images/produtos/queijo-trufado-requeijao-azeitona.webp",
+    "tag": "Recheado",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Queijo artesanal",
+      "Requeijão cremoso",
+      "Azeitonas selecionadas"
+    ],
+    "highlights": [
+      "Recheio cremoso e sabor marcante",
+      "Excelente impacto visual na tábua",
+      "Combina muito bem com pães e geleias"
+    ],
+    "pairings": [
+      "Geleia de pimenta",
+      "Pães artesanais",
+      "Vinho branco seco",
+      "Cachaça Pincha"
+    ],
+    "serving": [
+      "Corte em fatias grossas para preservar o recheio.",
+      "Sirva com torradas, azeite e ervas frescas.",
+      "Para uma apresentação premium, finalize com azeitonas e alecrim."
+    ],
+    "suggestions": [
+      "Geleias de Pimenta",
+      "Kit Provolone Especial",
+      "Cachaça Pincha"
+    ]
+  },
+  {
+    "title": "Queijo Trufado com Requeijão e Tomate Seco",
+    "category": "Queijos Trufados",
+    "desc": "Combinação cremosa de requeijão com o sabor intenso e levemente adocicado do tomate seco.",
+    "detail": "Esse trufado une cremosidade e intensidade: o requeijão traz suavidade, enquanto o tomate seco acrescenta aroma, cor e um toque agridoce. É uma ótima opção para quem quer uma tábua mais sofisticada sem abrir mão de sabores familiares.",
+    "weight": "aprox. 550 g",
+    "price": "R$ 60,00",
+    "image": "/images/produtos/queijo-trufado-requeijao-tomate-seco.webp",
+    "tag": "Recheado",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Queijo artesanal",
+      "Requeijão cremoso",
+      "Tomate seco"
+    ],
+    "highlights": [
+      "Sabor equilibrado entre cremosidade e intensidade",
+      "Ótimo para entradas e tábuas especiais",
+      "Visual elegante ao corte"
+    ],
+    "pairings": [
+      "Pesto",
+      "Tomates assados",
+      "Espumante brut",
+      "Geleia de pimenta com morango"
+    ],
+    "serving": [
+      "Sirva em fatias médias com azeite e manjericão.",
+      "Fica excelente com pães rústicos e tomates confitados.",
+      "Use como destaque central em uma tábua de frios."
+    ],
+    "suggestions": [
+      "Burrata em Conserva",
+      "Geleias de Pimenta",
+      "Kit 4 Queijos"
+    ]
+  },
+  {
+    "title": "Burrata em Conserva",
+    "category": "Queijos Artesanais",
+    "desc": "Burrata cremosa em conserva, perfeita com tomates, pesto, azeite, pães e saladas especiais.",
+    "detail": "A burrata é delicada, fresca e naturalmente sofisticada. Em conserva, ganha praticidade para servir em entradas, saladas e tábuas leves. Quando acompanhada de pesto, tomates assados e azeite, entrega uma experiência visual e gastronômica de alto nível.",
+    "weight": "330 g",
+    "price": "R$ 45,00",
+    "image": "/images/produtos/burrata-em-conserva.webp",
+    "tag": "Fresco",
+    "brand": "Casa Gusto",
+    "composition": [
+      "Burrata cremosa",
+      "Conserva especial"
+    ],
+    "highlights": [
+      "Interior cremoso e textura delicada",
+      "Ideal para entradas sofisticadas",
+      "Combina com ingredientes frescos e azeite"
+    ],
+    "pairings": [
+      "Pesto",
+      "Tomates confitados",
+      "Pães artesanais",
+      "Geleia de pimenta vermelha"
+    ],
+    "serving": [
+      "Sirva gelada ou em temperatura levemente fresca.",
+      "Finalize com azeite, pesto e tomates assados.",
+      "Perfeita como entrada para jantares e encontros especiais."
+    ],
+    "suggestions": [
+      "Geleias de Pimenta",
+      "Kit Parmesão Especial",
+      "Cachaça Mahê"
+    ]
+  },
+  {
+    "title": "Kit Provolone com Salame",
+    "category": "Kits Gourmet",
+    "desc": "Kit com provolone defumado, branco temperado e tipo gouda com salame.",
+    "detail": "Um kit completo para quem gosta de sabores intensos. As versões de provolone com salame entregam uma combinação prática, bonita e muito saborosa para tábuas, petiscos e reuniões informais com apresentação premium.",
+    "weight": "aprox. 800 g",
+    "price": "R$ 70,00",
+    "image": "/images/produtos/kit-provolone-com-salame.webp",
+    "tag": "Kit",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Provolone defumado com salame",
+      "Provolone branco temperado com salame",
+      "Provolone tipo gouda com salame"
+    ],
+    "highlights": [
+      "Três sabores em um único kit",
+      "Combina queijo e salame na medida certa",
+      "Perfeito para petiscos e tábuas fartas"
+    ],
+    "pairings": [
+      "Cervejas especiais",
+      "Geleia de pimenta",
+      "Castanhas caramelizadas",
+      "Cachaça Alpha"
+    ],
+    "serving": [
+      "Fatie em rodelas e distribua em linhas na tábua.",
+      "Combine com castanhas e frutas frescas para equilibrar o salame.",
+      "Ideal para happy hour e encontros de fim de semana."
+    ],
+    "suggestions": [
+      "Geleias de Pimenta",
+      "Kit Trancinha",
+      "Cachaça Alpha"
+    ]
+  },
+  {
+    "title": "Kit Trancinha",
+    "category": "Kits Gourmet",
+    "desc": "Trancinha defumada ao alho, tomate seco e tipo gouda em uma seleção artesanal.",
+    "detail": "O Kit Trancinha é uma seleção versátil e charmosa. Reúne sabores que agradam diferentes paladares e cria uma tábua colorida, com cortes bonitos e excelente apelo visual para receber amigos ou presentear.",
+    "weight": "aprox. 800 g",
+    "price": "R$ 60,00",
+    "image": "/images/produtos/kit-trancinha.webp",
+    "tag": "Kit",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Trancinha defumada ao alho",
+      "Trancinha com tomate seco",
+      "Trancinha tipo gouda"
+    ],
+    "highlights": [
+      "Variedade de sabores na mesma seleção",
+      "Ótima apresentação em fatias",
+      "Boa escolha para presentes e tábuas"
+    ],
+    "pairings": [
+      "Frutas frescas",
+      "Pães artesanais",
+      "Geleia de pimenta com frutas vermelhas",
+      "Espumante"
+    ],
+    "serving": [
+      "Corte em rodelas finas para destacar as cores.",
+      "Sirva com uvas, damascos e castanhas.",
+      "Monte junto com uma geleia para criar contraste agridoce."
+    ],
+    "suggestions": [
+      "Geleias de Pimenta",
+      "Kit Provolone Especial",
+      "Doce de Leite em Pedaços"
+    ]
+  },
+  {
+    "title": "Kit 4 Queijos",
+    "category": "Kits Gourmet",
+    "desc": "Queijo do reino, parmesão fresco, prato e provolone temperado em uma peça especial.",
+    "detail": "Um dos kits mais versáteis da Casa Gusto. Ele reúne quatro estilos de queijo em uma peça elegante, ideal para quem quer variedade sem precisar escolher vários itens separados. Funciona muito bem para degustação, presentes e tábuas rápidas.",
+    "weight": "aprox. 550 g",
+    "price": "R$ 60,00",
+    "image": "/images/produtos/kit-4-queijos.webp",
+    "tag": "Destaque",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Queijo do reino",
+      "Parmesão fresco",
+      "Queijo prato",
+      "Provolone temperado"
+    ],
+    "highlights": [
+      "Quatro sabores em uma única peça",
+      "Ótimo custo-benefício para degustação",
+      "Visual colorido e sofisticado"
+    ],
+    "pairings": [
+      "Geleia de pimenta",
+      "Uvas",
+      "Castanhas",
+      "Cachaça Pincha"
+    ],
+    "serving": [
+      "Corte cada quarto em fatias finas e organize por cor.",
+      "Acrescente frutas para valorizar a apresentação.",
+      "Excelente para montar uma tábua compacta e completa."
+    ],
+    "suggestions": [
+      "Geleias de Pimenta",
+      "Cachaça Pincha",
+      "Doce de Leite em Pedaços com Cocada e Cacau"
+    ]
+  },
+  {
+    "title": "Queijo Parmesão Fresco",
+    "category": "Queijos Artesanais",
+    "desc": "Parmesão fresco artesanal com textura firme e sabor equilibrado para tábuas e receitas.",
+    "detail": "Um parmesão mais suave e versátil, com textura firme e sabor equilibrado. É ótimo para consumo em fatias, receitas, massas, risotos e tábuas de frios. Um item base para quem quer ter sempre um queijo artesanal de qualidade em casa.",
+    "weight": "600 g",
+    "price": "R$ 58,00",
+    "image": "/images/produtos/queijo-parmesao-fresco.webp",
+    "tag": "",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Parmesão fresco artesanal"
+    ],
+    "highlights": [
+      "Sabor suave e fácil de harmonizar",
+      "Funciona em receitas e tábuas",
+      "Peça generosa de 600 g"
+    ],
+    "pairings": [
+      "Massas",
+      "Azeite",
+      "Pães rústicos",
+      "Cachaça Mahê"
+    ],
+    "serving": [
+      "Sirva em lascas para degustação.",
+      "Rale sobre massas e risotos.",
+      "Combine com azeite e pimenta-do-reino para uma entrada simples."
+    ],
+    "suggestions": [
+      "Geleias de Pimenta",
+      "Cachaça Mahê",
+      "Doce de Leite em Pedaços"
+    ]
+  },
+  {
+    "title": "Parmesão Capa Preta",
+    "category": "Queijos Artesanais",
+    "desc": "Parmesão maturado de sabor mais intenso, excelente para harmonizações e degustações.",
+    "detail": "O Parmesão Capa Preta tem perfil mais intenso e apresentação premium. É uma escolha para quem gosta de queijos com personalidade, sabor marcante e presença em harmonizações com bebidas, castanhas e doces artesanais.",
+    "weight": "600 g",
+    "price": "R$ 70,00",
+    "image": "/images/produtos/parmesao-capa-preta.webp",
+    "tag": "Premium",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Parmesão maturado",
+      "Capa preta"
+    ],
+    "highlights": [
+      "Sabor mais intenso",
+      "Excelente para degustação",
+      "Apresentação elegante"
+    ],
+    "pairings": [
+      "Cachaça Ouro Especial Magnate",
+      "Geleia de pimenta",
+      "Nozes",
+      "Doce de leite com nozes"
+    ],
+    "serving": [
+      "Sirva em lascas ou cubos grandes.",
+      "Combine com bebida premium para uma experiência mais refinada.",
+      "Use como destaque em tábuas de queijos maturados."
+    ],
+    "suggestions": [
+      "Cachaça Ouro Especial Magnate",
+      "Doce de Leite em Pedaços com Nozes",
+      "Geleias de Pimenta"
+    ]
+  },
+  {
+    "title": "Kit Parmesão",
+    "category": "Kits Gourmet",
+    "desc": "Seleção com parmesão curado, defumado, temperado e capa preta.",
+    "detail": "Uma seleção para degustar diferentes perfis de parmesão: do curado ao defumado, passando pelo temperado e pela versão capa preta. É um kit com cara de presente e excelente para quem aprecia queijos mais marcantes.",
+    "weight": "aprox. 800 g",
+    "price": "R$ 65,00",
+    "image": "/images/produtos/kit-parmesao.webp",
+    "tag": "Kit",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Parmesão curado",
+      "Parmesão defumado",
+      "Parmesão temperado",
+      "Parmesão capa preta"
+    ],
+    "highlights": [
+      "Quatro versões de parmesão",
+      "Ideal para degustação comparativa",
+      "Ótimo para presentear"
+    ],
+    "pairings": [
+      "Cachaça Alpha",
+      "Geleia de pimenta com frutas vermelhas",
+      "Castanhas",
+      "Mel"
+    ],
+    "serving": [
+      "Corte em cubos e separe por sabor.",
+      "Monte uma degustação em ordem do mais suave ao mais intenso.",
+      "Combine com geleias e castanhas para elevar a experiência."
+    ],
+    "suggestions": [
+      "Cachaça Alpha",
+      "Geleias de Pimenta",
+      "Doce de Leite em Pedaços com Nozes"
+    ]
+  },
+  {
+    "title": "Kit Parmesão Especial",
+    "category": "Kits Gourmet",
+    "desc": "Quatro sabores: parmesão ao vinho, defumado, temperado e fresco.",
+    "detail": "Esse kit traz uma seleção elegante e equilibrada de parmesões, incluindo a versão ao vinho, que adiciona cor e sofisticação à tábua. É uma escolha excelente para harmonizações e encontros especiais.",
+    "weight": "550 g",
+    "price": "R$ 55,00",
+    "image": "/images/produtos/kit-parmesao-especial.webp",
+    "tag": "Kit",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Parmesão ao vinho",
+      "Parmesão defumado",
+      "Parmesão temperado",
+      "Parmesão fresco"
+    ],
+    "highlights": [
+      "Inclui parmesão ao vinho",
+      "Visual sofisticado para tábuas",
+      "Boa variedade em 550 g"
+    ],
+    "pairings": [
+      "Vinho tinto",
+      "Cachaça Mahê",
+      "Uvas",
+      "Geleia de pimenta"
+    ],
+    "serving": [
+      "Organize os queijos em formato circular para destacar as cores.",
+      "Sirva com frutas frescas e uma geleia agridoce.",
+      "Perfeito para presente gourmet de valor acessível."
+    ],
+    "suggestions": [
+      "Cachaça Mahê",
+      "Geleias de Pimenta",
+      "Burrata em Conserva"
+    ]
+  },
+  {
+    "title": "Kit Provolone Especial",
+    "category": "Kits Gourmet",
+    "desc": "Provolone defumado, temperado, tipo gouda e salame para montar uma tábua completa.",
+    "detail": "Uma seleção pronta para uma tábua com bastante sabor. Os provolones trazem notas defumadas, temperadas e suaves, enquanto o salame adiciona intensidade e textura. É ideal para happy hour, confraternizações e presentes informais.",
+    "weight": "700 g",
+    "price": "R$ 65,00",
+    "image": "/images/produtos/kit-provolone-especial.webp",
+    "tag": "Kit",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Provolone defumado",
+      "Provolone temperado",
+      "Provolone tipo gouda",
+      "Salame"
+    ],
+    "highlights": [
+      "Já vem com queijo e charcutaria",
+      "Excelente para happy hour",
+      "Ótimo equilíbrio entre sabores"
+    ],
+    "pairings": [
+      "Cerveja artesanal",
+      "Geleia de pimenta vermelha",
+      "Morangos",
+      "Castanhas caramelizadas"
+    ],
+    "serving": [
+      "Fatie os provolones e o salame em rodelas finas.",
+      "Acrescente frutas frescas para equilibrar a intensidade.",
+      "Sirva com geleia de pimenta para criar contraste."
+    ],
+    "suggestions": [
+      "Geleias de Pimenta",
+      "Cachaça Pincha",
+      "Kit Trancinha"
+    ]
+  },
+  {
+    "title": "Doce de Leite em Pedaços",
+    "category": "Doces Artesanais",
+    "desc": "Doce de leite artesanal em cubos, macio e perfeito para acompanhar um café especial.",
+    "detail": "O clássico doce de leite em pedaços, com textura macia e sabor de receita artesanal. É simples, afetivo e muito versátil: vai bem puro, com café, em tábuas doces ou como complemento para presentes gourmet.",
+    "weight": "400 g",
+    "price": "R$ 29,00",
+    "image": "/images/produtos/doce-leite-pedacos.webp",
+    "tag": "",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Doce de leite em pedaços"
+    ],
+    "highlights": [
+      "Clássico e versátil",
+      "Textura macia",
+      "Ideal para café e sobremesa"
+    ],
+    "pairings": [
+      "Café coado",
+      "Queijo parmesão fresco",
+      "Cachaça Alpha",
+      "Nozes"
+    ],
+    "serving": [
+      "Sirva em cubos pequenos ao lado de café.",
+      "Combine com parmesão fresco para contraste doce e salgado.",
+      "Use em kits de presente com outros doces."
+    ],
+    "suggestions": [
+      "Queijo Parmesão Fresco",
+      "Cachaça Alpha",
+      "Doce de Leite em Pedaços com Nozes"
+    ]
+  },
+  {
+    "title": "Doce de Leite em Pedaços com Nozes",
+    "category": "Doces Artesanais",
+    "desc": "Doce de leite artesanal com nozes, unindo cremosidade e crocância.",
+    "detail": "Uma versão mais sofisticada do doce de leite em pedaços. As nozes adicionam crocância e um sabor levemente amanteigado, tornando o produto ideal para sobremesas, cafés especiais e tábuas gourmet com queijos maturados.",
+    "weight": "400 g",
+    "price": "R$ 29,00",
+    "image": "/images/produtos/doce-leite-nozes.webp",
+    "tag": "",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Doce de leite em pedaços",
+      "Nozes"
+    ],
+    "highlights": [
+      "Toque crocante das nozes",
+      "Perfil mais sofisticado",
+      "Excelente com queijos maturados"
+    ],
+    "pairings": [
+      "Parmesão Capa Preta",
+      "Café espresso",
+      "Cachaça Ouro Especial Magnate",
+      "Frutas secas"
+    ],
+    "serving": [
+      "Sirva em uma tábua com queijos de sabor intenso.",
+      "Combine com café ou cachaça premium.",
+      "Ótimo para finalizar uma refeição especial."
+    ],
+    "suggestions": [
+      "Parmesão Capa Preta",
+      "Cachaça Ouro Especial Magnate",
+      "Doce de Leite em Pedaços com Cocada e Cacau"
+    ]
+  },
+  {
+    "title": "Requeijão em Barra com Tomate Seco",
+    "category": "Requeijões Artesanais",
+    "desc": "Requeijão artesanal em barra com tomate seco, ótimo para fatias, tábuas e sanduíches.",
+    "detail": "Cremoso no sabor e firme no corte, esse requeijão em barra ganha personalidade com tomate seco. É ótimo para fatias, sanduíches especiais e tábuas com visual colorido e sabor mediterrâneo.",
+    "weight": "600 g",
+    "price": "R$ 58,00",
+    "image": "/images/produtos/requeijao-barra-tomate-seco.webp",
+    "tag": "",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Requeijão em barra",
+      "Tomate seco"
+    ],
+    "highlights": [
+      "Corta em fatias bonitas",
+      "Sabor intenso do tomate seco",
+      "Versátil para tábuas e sanduíches"
+    ],
+    "pairings": [
+      "Pães artesanais",
+      "Azeite",
+      "Manjericão",
+      "Geleia de pimenta com morango"
+    ],
+    "serving": [
+      "Sirva em fatias com azeite e ervas.",
+      "Use em sanduíches gourmet ou bruschettas.",
+      "Combine com pães rústicos e geleia agridoce."
+    ],
+    "suggestions": [
+      "Geleias de Pimenta",
+      "Burrata em Conserva",
+      "Kit 4 Queijos"
+    ]
+  },
+  {
+    "title": "Requeijão em Barra com Azeitona",
+    "category": "Requeijões Artesanais",
+    "desc": "Requeijão em barra com azeitonas selecionadas e textura macia para aperitivos.",
+    "detail": "Uma opção cremosa, elegante e fácil de servir. As azeitonas trazem sabor salino e agradável, criando um requeijão em barra que combina com aperitivos, pães, vinhos leves e tábuas de fim de tarde.",
+    "weight": "600 g",
+    "price": "R$ 58,00",
+    "image": "/images/produtos/requeijao-barra-azeitona.webp",
+    "tag": "",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Requeijão em barra",
+      "Azeitonas"
+    ],
+    "highlights": [
+      "Textura macia e corte firme",
+      "Sabor equilibrado das azeitonas",
+      "Ótimo para aperitivos"
+    ],
+    "pairings": [
+      "Torradas",
+      "Azeite",
+      "Vinho branco",
+      "Geleia de pimenta vermelha"
+    ],
+    "serving": [
+      "Corte em fatias e sirva com torradas.",
+      "Finalize com alecrim e azeitonas extras.",
+      "Combine com uma geleia picante para contraste."
+    ],
+    "suggestions": [
+      "Geleias de Pimenta",
+      "Queijo Trufado com Requeijão e Azeitona",
+      "Cachaça Pincha"
+    ]
+  },
+  {
+    "title": "Requeijão em Barra com Raspas",
+    "category": "Requeijões Artesanais",
+    "desc": "Requeijão artesanal em barra com raspas de queijo, de sabor mais marcante.",
+    "detail": "As raspas de queijo dão ao requeijão uma textura diferenciada e um sabor mais intenso. É uma opção ótima para quem quer um produto artesanal fácil de servir, mas com personalidade suficiente para se destacar na tábua.",
+    "weight": "600 g",
+    "price": "R$ 58,00",
+    "image": "/images/produtos/requeijao-barra-raspas.webp",
+    "tag": "",
+    "brand": "Buba Canastra",
+    "composition": [
+      "Requeijão em barra",
+      "Raspas de queijo"
+    ],
+    "highlights": [
+      "Textura diferenciada",
+      "Sabor mais marcante",
+      "Bom para entradas e tábuas"
+    ],
+    "pairings": [
+      "Pães rústicos",
+      "Geleia de pimenta",
+      "Cervejas especiais",
+      "Castanhas"
+    ],
+    "serving": [
+      "Corte em cubos para petiscar.",
+      "Sirva com pães e geleias artesanais.",
+      "Ótimo para compor tábuas com produtos defumados."
+    ],
+    "suggestions": [
+      "Kit Provolone Especial",
+      "Geleias de Pimenta",
+      "Cachaça Alpha"
+    ]
+  },
+  {
+    "title": "Licor Cream de Doce de Leite",
+    "category": "Bebidas Premium",
+    "desc": "Licor cremoso sabor doce de leite, ideal para servir gelado, com cafés ou sobremesas.",
+    "detail": "Um licor cremoso e envolvente, perfeito para momentos de sobremesa. Pode ser servido bem gelado, com gelo, ao lado de café ou como complemento de doces artesanais. A apresentação também o torna uma ótima opção de presente.",
+    "weight": "500 ml ou 700 ml",
+    "price": "R$ 75,00 / R$ 95,00",
+    "image": "/images/produtos/licor-doce-de-leite.webp",
+    "tag": "Licor",
+    "brand": "Sr. Licor",
+    "composition": [
+      "Licor cream sabor doce de leite"
+    ],
+    "options": [
+      "500 ml — R$ 75,00",
+      "700 ml — R$ 95,00"
+    ],
+    "highlights": [
+      "Textura cremosa",
+      "Ótimo para sobremesas",
+      "Disponível em dois tamanhos"
+    ],
+    "pairings": [
+      "Café especial",
+      "Doce de leite em pedaços",
+      "Brownie",
+      "Queijos suaves"
+    ],
+    "serving": [
+      "Sirva bem gelado ou com gelo.",
+      "Combine com café e doces artesanais.",
+      "Use como presente junto a uma caixa de doces."
+    ],
+    "suggestions": [
+      "Doce de Leite em Pedaços",
+      "Doce de Leite em Pedaços com Nozes",
+      "Queijo Parmesão Fresco"
+    ]
+  },
+  {
+    "title": "Geleias de Pimenta",
+    "category": "Geleias Artesanais",
+    "desc": "Sabores pimenta vermelha, pimenta com morango e pimenta com frutas vermelhas.",
+    "detail": "As geleias de pimenta são acompanhamentos estratégicos para valorizar queijos, carnes e tábuas. O equilíbrio agridoce ajuda a realçar a cremosidade dos queijos e cria contraste com produtos defumados e maturados.",
+    "weight": "260 g",
+    "price": "R$ 24,00",
+    "image": "/images/produtos/geleias-de-pimenta.webp",
+    "tag": "3 sabores",
+    "brand": "UAI Red Pepper",
+    "composition": [
+      "Pimenta vermelha",
+      "Pimenta com morango",
+      "Pimenta com frutas vermelhas"
+    ],
+    "options": [
+      "Pimenta Vermelha — R$ 24,00",
+      "Pimenta com Morango — R$ 24,00",
+      "Pimenta com Frutas Vermelhas — R$ 24,00"
+    ],
+    "highlights": [
+      "Três sabores disponíveis",
+      "Valoriza tábuas de queijos",
+      "Agridoce com toque picante"
+    ],
+    "pairings": [
+      "Burrata",
+      "Parmesão Capa Preta",
+      "Provolones",
+      "Requeijão em barra"
+    ],
+    "serving": [
+      "Sirva em potinhos pequenos na tábua.",
+      "Use sobre burrata ou queijos cremosos.",
+      "Combine com salame e provolone para contraste."
+    ],
+    "suggestions": [
+      "Burrata em Conserva",
+      "Kit Provolone Especial",
+      "Parmesão Capa Preta"
+    ]
+  },
+  {
+    "title": "Cachaça Ouro Especial Magnate",
+    "category": "Bebidas Premium",
+    "desc": "Cachaça reserva 5 anos em barril de amendoim, com apresentação premium.",
+    "detail": "Uma cachaça de perfil premium, pensada para degustação e presentes especiais. O envelhecimento por 5 anos em barril de amendoim traz uma proposta elegante, que combina muito bem com queijos maturados, castanhas e doces artesanais.",
+    "weight": "750 ml",
+    "price": "R$ 194,90",
+    "image": "/images/produtos/cachaca-ouro-especial-magnate.webp",
+    "tag": "Premium",
+    "brand": "Vale da Canastra",
+    "composition": [
+      "Cachaça reserva",
+      "5 anos em barril de amendoim",
+      "750 ml"
+    ],
+    "highlights": [
+      "Reserva 5 anos",
+      "Garrafa premium",
+      "Ideal para presentes"
+    ],
+    "pairings": [
+      "Parmesão Capa Preta",
+      "Doce de leite com nozes",
+      "Castanhas",
+      "Kit Parmesão"
+    ],
+    "serving": [
+      "Sirva em dose pequena para degustação.",
+      "Combine com queijos maturados e doces de leite.",
+      "Excelente para montar um presente gourmet premium."
+    ],
+    "suggestions": [
+      "Parmesão Capa Preta",
+      "Doce de Leite em Pedaços com Nozes",
+      "Kit Parmesão"
+    ]
+  },
+  {
+    "title": "Cachaça Mahê",
+    "category": "Bebidas Premium",
+    "desc": "Cachaça premium Vale da Canastra em garrafa exclusiva para degustação e presentes.",
+    "detail": "A Mahê se destaca pela garrafa de design exclusivo e pela proposta de presente sofisticado. É uma bebida para compor experiências gourmet, especialmente quando acompanhada de queijos, doces e geleias selecionadas.",
+    "weight": "750 ml",
+    "price": "R$ 194,90",
+    "image": "/images/produtos/cachaca-mahe.webp",
+    "tag": "Premium",
+    "brand": "Vale da Canastra",
+    "composition": [
+      "Cachaça premium",
+      "Garrafa exclusiva",
+      "750 ml"
+    ],
+    "highlights": [
+      "Design de garrafa sofisticado",
+      "Ótima opção para presente",
+      "Combina com experiências gourmet"
+    ],
+    "pairings": [
+      "Kit Parmesão Especial",
+      "Burrata",
+      "Geleias de pimenta",
+      "Doce de leite"
+    ],
+    "serving": [
+      "Sirva em momentos de degustação.",
+      "Monte com um kit de queijos para presente.",
+      "Combine com doces artesanais para finalizar a experiência."
+    ],
+    "suggestions": [
+      "Kit Parmesão Especial",
+      "Burrata em Conserva",
+      "Geleias de Pimenta"
+    ]
+  },
+  {
+    "title": "Cachaça Alpha",
+    "category": "Bebidas Premium",
+    "desc": "Cachaça premium Vale da Canastra em garrafa sofisticada de 500 ml.",
+    "detail": "A Alpha é uma cachaça premium em garrafa menor, elegante e fácil de presentear. É uma boa opção para quem deseja uma bebida especial com excelente apresentação, combinando com tábuas de queijos, charcutaria e doces intensos.",
+    "weight": "500 ml",
+    "price": "R$ 129,90",
+    "image": "/images/produtos/cachaca-alpha.webp",
+    "tag": "Premium",
+    "brand": "Vale da Canastra",
+    "composition": [
+      "Cachaça premium",
+      "Garrafa de 500 ml"
+    ],
+    "highlights": [
+      "Formato elegante de 500 ml",
+      "Boa opção de presente",
+      "Harmoniza com queijos e doces"
+    ],
+    "pairings": [
+      "Kit Provolone com Salame",
+      "Doce de leite em pedaços",
+      "Parmesão fresco",
+      "Castanhas"
+    ],
+    "serving": [
+      "Sirva em pequenas doses.",
+      "Combine com queijos de sabor médio e charcutaria.",
+      "Excelente para kits de presente mais compactos."
+    ],
+    "suggestions": [
+      "Kit Provolone com Salame",
+      "Doce de Leite em Pedaços",
+      "Queijo Parmesão Fresco"
+    ]
+  },
+  {
+    "title": "Cachaça Pincha",
+    "category": "Bebidas Premium",
+    "desc": "Cachaça Vale da Canastra de 750 ml, elegante para degustações e harmonizações.",
+    "detail": "A Pincha tem apresentação clássica e elegante, indicada para quem busca uma cachaça premium para degustar ou presentear. Harmoniza especialmente bem com queijos de sabor marcante, geleias e produtos defumados.",
+    "weight": "750 ml",
+    "price": "R$ 179,90",
+    "image": "/images/produtos/cachaca-pincha.webp",
+    "tag": "Premium",
+    "brand": "Vale da Canastra",
+    "composition": [
+      "Cachaça premium",
+      "750 ml"
+    ],
+    "highlights": [
+      "Garrafa de 750 ml",
+      "Visual clássico e premium",
+      "Excelente para harmonização"
+    ],
+    "pairings": [
+      "Kit 4 Queijos",
+      "Queijo trufado com azeitona",
+      "Geleia de pimenta",
+      "Provolones"
+    ],
+    "serving": [
+      "Sirva como bebida de degustação.",
+      "Combine com tábuas de queijos e salame.",
+      "Ótima para presentear junto com um kit gourmet."
+    ],
+    "suggestions": [
+      "Kit 4 Queijos",
+      "Queijo Trufado com Requeijão e Azeitona",
+      "Geleias de Pimenta"
+    ]
+  }
 ];
+const categories = ["Todos", "Bebidas Premium", "Doces Artesanais", "Geleias Artesanais", "Kits Gourmet", "Queijos Artesanais", "Queijos Trufados", "Requeijões Artesanais"];
 const benefits = [
   ['✓','Curadoria Premium','Produtos selecionados de pequenos produtores e marcas artesanais.'],
   ['☎','Atendimento Direto','Você fala pelo WhatsApp para tirar dúvidas e receber sugestões.'],
@@ -51,7 +896,7 @@ const deps = [
       <p class="lead">Curadoria premium de queijos artesanais, charcutaria, licores e doces. Entrega rápida em Maceió com atendimento direto pelo WhatsApp.</p>
       <div class="actions">
         <button class="btn" data-whatsapp="Hero" data-message="Olá, vim pelo site da Casa Gusto e quero conhecer os produtos disponíveis.">☎ Pedir pelo WhatsApp</button>
-        <a class="btn outline" href="#produtos">Ver kits e sugestões ›</a>
+        <a class="btn outline" href="#produtos">Ver produtos disponíveis ›</a>
       </div>
     </div>
     <div class="hero-photo">
@@ -62,12 +907,58 @@ const deps = [
 </section>
 <section id="produtos" class="section card">
   <div class="container">
-    <div class="center"><h2>Nossa Curadoria</h2><p class="sub">Produtos artesanais selecionados para garantir uma experiência gastronômica memorável.</p></div>
-    <div class="grid products">
-      {products.map(([title,desc,img,badge]) => <article class="product"><div class="pic"><img src={img} alt={title} loading="lazy" width="700" height="525" />{badge && <span class="tag">{badge}</span>}<button class="share" data-share={title} data-desc={desc} aria-label={`Compartilhar ${title}`}>↗</button></div><div class="product-body"><h3>{title}</h3><p>{desc}</p><button class="btn outline" data-whatsapp={`Produto: ${title}`} data-message={`Olá, tenho interesse no produto: ${title}. Pode me mandar os valores e opções?`}>Quero esse pelo WhatsApp</button></div></article>)}
+    <div class="center"><h2>Produtos disponíveis</h2><p class="sub">Fotos reais dos produtos da Casa Gusto. Clique em qualquer item para ver descrição completa, harmonizações e sugestões para valorizar o pedido.</p></div>
+    <div class="catalog-tools" aria-label="Filtros de produtos">
+      <div class="filters">
+        {categories.map(category => <button type="button" class="filter-chip" data-filter={category}>{category}</button>)}
+      </div>
+      <label class="search-box" aria-label="Buscar produto"><span>Buscar</span><input id="productSearch" type="search" placeholder="Ex: parmesão, doce, cachaça..." /></label>
     </div>
+    <div class="grid products" id="productGrid">
+      {products.map((product, index) => (
+        <article class="product" data-product-card data-product-index={index} data-category={product.category} data-title={`${product.title} ${product.category} ${product.desc} ${product.detail} ${product.pairings?.join(' ')}`.toLowerCase()} tabindex="0" role="button" aria-label={`Ver detalhes de ${product.title}`}>
+          <div class="pic">
+            <img src={product.image} alt={product.title} loading="lazy" width="700" height="525" />
+            {product.tag && <span class="tag">{product.tag}</span>}
+            <button class="share" data-modal-ignore data-share={product.title} data-desc={product.desc} aria-label={`Compartilhar ${product.title}`}>↗</button>
+          </div>
+          <div class="product-body">
+            <span class="category-label">{product.category}</span>
+            <h3>{product.title}</h3>
+            <p>{product.desc}</p>
+            <div class="product-meta"><span>{product.weight}</span><strong>{product.price}</strong></div>
+            <button class="btn outline detail-btn" type="button">Ver detalhes e sugestões</button>
+          </div>
+        </article>
+      ))}
+    </div>
+    <p class="empty-message" id="emptyProducts">Nenhum produto encontrado com esse filtro.</p>
   </div>
 </section>
+<div class="product-modal" id="productModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <article class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" type="button" data-close-modal aria-label="Fechar detalhes">×</button>
+    <div class="modal-grid">
+      <div class="modal-image-wrap">
+        <img id="modalImage" src="" alt="" />
+        <span class="tag modal-tag" id="modalTag"></span>
+      </div>
+      <div class="modal-content">
+        <span class="category-label" id="modalCategory"></span>
+        <h2 id="modalTitle"></h2>
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="modal-price"><span id="modalWeight"></span><strong id="modalPrice"></strong></div>
+        <div class="modal-section" id="modalOptionsBlock"><h3>Opções disponíveis</h3><div class="option-list" id="modalOptions"></div></div>
+        <div class="modal-section"><h3>Por que valoriza a experiência</h3><ul id="modalHighlights"></ul></div>
+        <div class="modal-section"><h3>Harmoniza com</h3><div class="chips" id="modalPairings"></div></div>
+        <div class="modal-section"><h3>Sugestão de apresentação</h3><ul id="modalServing"></ul></div>
+        <div class="modal-section"><h3>Combina com outros produtos</h3><div class="related-grid" id="modalRelated"></div></div>
+        <div class="modal-actions"><button class="btn" id="modalWhatsapp" type="button">☎ Pedir esse produto</button><button class="btn outline" id="modalShare" type="button">Compartilhar</button></div>
+      </div>
+    </div>
+  </article>
+</div>
 <section id="kits" class="section">
   <div class="container kitbox">
     <div class="kitgrid">
@@ -91,6 +982,7 @@ const deps = [
 </main>
 <footer class="footer"><div class="container footer-grid"><div><div class="brand">CASA GUSTO</div><p class="small">Elegância que se prova. Entregas em Maceió – AL.</p></div><button class="admin" id="openStats" type="button">estatísticas locais</button></div></footer>
 <button class="btn floating" data-whatsapp="Botão Flutuante" data-message="Olá, vim pelo site da Casa Gusto e quero conhecer os produtos disponíveis." aria-label="Pedir pelo WhatsApp">☎</button><div class="stats-panel" id="statsPanel"><strong>Cliques no WhatsApp</strong><div id="statsContent" class="small" style="margin:10px 0"></div><button class="btn outline" id="clearStats" type="button">Limpar</button></div>
+<script type="application/json" id="productData" set:html={JSON.stringify(products)}></script>
 <script>
 const WHATSAPP='5582988058920', KEY='casa-gusto-whatsapp-clicks';
 const msgLink=m=>`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(m)}`;
@@ -98,10 +990,132 @@ function track(label){try{const s=JSON.parse(localStorage.getItem(KEY)||'{}');s[
 function openWA(message,label){track(label);window.open(msgLink(message),'_blank','noopener')}
 document.querySelectorAll('[data-whatsapp]').forEach(el=>el.addEventListener('click',()=>openWA(el.dataset.message,el.dataset.whatsapp)));
 document.querySelectorAll('.choices').forEach(group=>group.addEventListener('click',e=>{if(e.target.matches('.choice')){group.querySelectorAll('.choice').forEach(b=>b.classList.remove('active'));e.target.classList.add('active')}}));
-document.getElementById('kitForm').addEventListener('submit',e=>{e.preventDefault();const get=g=>document.querySelector(`[data-group="${g}"] .active`)?.textContent;if(!get('occasion')||!get('type')||!get('price')) return alert('Selecione as três opções para montar o kit.');openWA(`Olá, Casa Gusto! Gostaria de montar um kit.\n\nOcasião: ${get('occasion')}\nTipo: ${get('type')}\nValor desejado: ${get('price')}\n\nPodem me enviar opções?`,'Monte seu Kit')});
+const productData=JSON.parse(document.getElementById('productData').textContent);
+const productCards=[...document.querySelectorAll('[data-product-card]')];
+const searchInput=document.getElementById('productSearch');
+const emptyProducts=document.getElementById('emptyProducts');
+let activeFilter='Todos';
+function applyProductFilters(){
+  const term=(searchInput?.value||'').trim().toLowerCase();
+  let visible=0;
+  productCards.forEach(card=>{
+    const matchFilter=activeFilter==='Todos'||card.dataset.category===activeFilter;
+    const matchSearch=!term||card.dataset.title.includes(term);
+    const show=matchFilter&&matchSearch;
+    card.style.display=show?'':'none';
+    if(show) visible++;
+  });
+  if(emptyProducts) emptyProducts.style.display=visible?'none':'block';
+}
+document.querySelectorAll('[data-filter]').forEach((btn,index)=>{
+  if(index===0) btn.classList.add('active');
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-filter]').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter=btn.dataset.filter;
+    applyProductFilters();
+  });
+});
+searchInput?.addEventListener('input',applyProductFilters);
+const modal=document.getElementById('productModal');
+const modalCard=modal?.querySelector('.modal-card');
+const modalClose=modal?.querySelector('.modal-close');
+const modalImage=document.getElementById('modalImage');
+const modalTag=document.getElementById('modalTag');
+const modalCategory=document.getElementById('modalCategory');
+const modalTitle=document.getElementById('modalTitle');
+const modalDesc=document.getElementById('modalDesc');
+const modalWeight=document.getElementById('modalWeight');
+const modalPrice=document.getElementById('modalPrice');
+const modalOptionsBlock=document.getElementById('modalOptionsBlock');
+const modalOptions=document.getElementById('modalOptions');
+const modalHighlights=document.getElementById('modalHighlights');
+const modalPairings=document.getElementById('modalPairings');
+const modalServing=document.getElementById('modalServing');
+const modalRelated=document.getElementById('modalRelated');
+const modalWhatsapp=document.getElementById('modalWhatsapp');
+const modalShare=document.getElementById('modalShare');
+let activeProduct=null;
+function list(items){return (items||[]).map(item=>`<li>${item}</li>`).join('')}
+function chips(items){return (items||[]).map(item=>`<span class="mini-chip">${item}</span>`).join('')}
+function relatedCard(title){
+  const related=productData.find(p=>p.title===title);
+  if(!related) return '';
+  const index=productData.indexOf(related);
+  return `<button type="button" class="related-card" data-related-index="${index}"><img src="${related.image}" alt=""><span>${related.title}</span><strong>${related.price}</strong></button>`;
+}
+function productMessage(product){
+  return `Olá! Gostaria de pedir: ${product.title} — ${product.weight} — ${product.price}.`;
+}
+function openProduct(index){
+  const product=productData[index];
+  if(!product) return;
+  activeProduct=product;
+  modalImage.src=product.image;
+  modalImage.alt=product.title;
+  modalTag.textContent=product.tag||product.brand||'';
+  modalTag.style.display=product.tag||product.brand?'inline-flex':'none';
+  modalCategory.textContent=product.category;
+  modalTitle.textContent=product.title;
+  modalDesc.textContent=product.detail||product.desc;
+  modalWeight.textContent=product.weight;
+  modalPrice.textContent=product.price;
+  if(product.options?.length){
+    modalOptionsBlock.style.display='block';
+    modalOptions.innerHTML=product.options.map(option=>`<span class="option-pill">${option}</span>`).join('');
+  }else{
+    modalOptionsBlock.style.display='none';
+    modalOptions.innerHTML='';
+  }
+  modalHighlights.innerHTML=list(product.highlights);
+  modalPairings.innerHTML=chips(product.pairings);
+  modalServing.innerHTML=list(product.serving);
+  modalRelated.innerHTML=(product.suggestions||[]).map(relatedCard).join('');
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open');
+  // Sempre abre os detalhes no início do conteúdo.
+  // Antes, o foco no botão de WhatsApp fazia o modal rolar até o final.
+  if(modalCard) modalCard.scrollTop = 0;
+  requestAnimationFrame(() => {
+    if(modalCard) modalCard.scrollTop = 0;
+    modalClose?.focus({preventScroll:true});
+  });
+}
+function closeProduct(){
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-open');
+}
+productCards.forEach(card=>{
+  card.addEventListener('click',e=>{if(e.target.closest('[data-modal-ignore]')) return; openProduct(Number(card.dataset.productIndex));});
+  card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openProduct(Number(card.dataset.productIndex));}});
+});
+document.querySelectorAll('[data-close-modal]').forEach(el=>el.addEventListener('click',closeProduct));
+modalRelated.addEventListener('click',e=>{const btn=e.target.closest('[data-related-index]');if(btn) openProduct(Number(btn.dataset.relatedIndex));});
+modalWhatsapp.addEventListener('click',()=>{if(activeProduct) openWA(productMessage(activeProduct),`Produto modal: ${activeProduct.title}`)});
+modalShare.addEventListener('click',async()=>{if(!activeProduct) return; const text=`${activeProduct.title} - ${activeProduct.desc}
+
+Confira na Casa Gusto:`; if(navigator.share){try{return await navigator.share({title:`Casa Gusto | ${activeProduct.title}`,text,url:location.href})}catch{}} window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text+' '+location.href)}`,'_blank')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape') closeProduct();});
+document.getElementById('kitForm').addEventListener('submit',e=>{e.preventDefault();const get=g=>document.querySelector(`[data-group="${g}"] .active`)?.textContent;if(!get('occasion')||!get('type')||!get('price')) return alert('Selecione as três opções para montar o kit.');openWA(`Olá, Casa Gusto! Gostaria de montar um kit.
+
+Ocasião: ${get('occasion')}
+Tipo: ${get('type')}
+Valor desejado: ${get('price')}
+
+Podem me enviar opções?`,'Monte seu Kit')});
 document.querySelector('input[name="phone"]').addEventListener('input',e=>{let d=e.target.value.replace(/\D/g,'').slice(0,11);e.target.value=d.length<=2?`(${d}`:d.length<=6?`(${d.slice(0,2)}) ${d.slice(2)}`:d.length<=10?`(${d.slice(0,2)}) ${d.slice(2,6)}-${d.slice(6)}`:`(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}`});
-document.getElementById('leadForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.currentTarget), phone=String(f.get('phone')).replace(/\D/g,''); if(phone.length<10) return alert('Informe um WhatsApp válido.');openWA(`Olá, meu nome é ${f.get('name')}.\n\nMeu WhatsApp: ${f.get('phone')}\nEstou procurando: ${f.get('need')}\nObservações: ${f.get('obs')||''}\n\nGostaria de mais informações.`,'Formulário Corporativo')});
-document.querySelectorAll('[data-share]').forEach(el=>el.addEventListener('click',async()=>{const text=`${el.dataset.share} - ${el.dataset.desc}\n\nConfira na Casa Gusto:`; if(navigator.share){try{return await navigator.share({title:`Casa Gusto | ${el.dataset.share}`,text,url:location.href})}catch{}} window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text+' '+location.href)}`,'_blank')}));
+document.getElementById('leadForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.currentTarget), phone=String(f.get('phone')).replace(/\D/g,''); if(phone.length<10) return alert('Informe um WhatsApp válido.');openWA(`Olá, meu nome é ${f.get('name')}.
+
+Meu WhatsApp: ${f.get('phone')}
+Estou procurando: ${f.get('need')}
+Observações: ${f.get('obs')||''}
+
+Gostaria de mais informações.`,'Formulário Corporativo')});
+document.querySelectorAll('[data-share]').forEach(el=>el.addEventListener('click',async()=>{const text=`${el.dataset.share} - ${el.dataset.desc}
+
+Confira na Casa Gusto:`; if(navigator.share){try{return await navigator.share({title:`Casa Gusto | ${el.dataset.share}`,text,url:location.href})}catch{}} window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text+' '+location.href)}`,'_blank')}));
 openStats.onclick=()=>{statsPanel.classList.toggle('open');let s={};try{s=JSON.parse(localStorage.getItem(KEY)||'{}')}catch{};statsContent.innerHTML=Object.keys(s).length?Object.entries(s).map(([k,v])=>`${k}: <strong>${v}</strong>`).join('<br>'):'Sem cliques registrados neste navegador.'};
 clearStats.onclick=()=>{localStorage.removeItem(KEY);statsContent.textContent='Sem cliques registrados neste navegador.'};
 </script>
