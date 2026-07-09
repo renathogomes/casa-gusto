@@ -6,3 +6,219 @@
 
 /* Detalhes premium dos produtos */
 .product{cursor:pointer}.detail-btn{position:relative;z-index:1}.product:focus{outline:2px solid var(--gold2);outline-offset:4px}.product-modal{position:fixed;inset:0;z-index:80;display:none}.product-modal.open{display:block}.modal-backdrop{position:absolute;inset:0;background:rgba(3,9,18,.78);backdrop-filter:blur(10px)}body.modal-open{overflow:hidden}.modal-card{position:relative;width:min(1120px,calc(100% - 28px));max-height:calc(100vh - 36px);margin:18px auto;background:linear-gradient(145deg,#0d1b30,#081426);border:1px solid var(--border);border-radius:28px;box-shadow:0 28px 90px rgba(0,0,0,.55);overflow:auto}.modal-close{position:sticky;top:16px;left:calc(100% - 64px);z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid var(--border);background:rgba(10,23,41,.82);color:var(--text);font-size:28px;line-height:1;cursor:pointer;display:grid;place-items:center}.modal-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;padding:12px 34px 34px}.modal-image-wrap{position:sticky;top:78px;align-self:start;border-radius:24px;overflow:hidden;border:1px solid var(--border);background:#111;min-height:420px}.modal-image-wrap img{width:100%;height:100%;min-height:420px;object-fit:cover}.modal-tag{top:18px;left:18px}.modal-content h2{font:700 clamp(34px,4vw,56px)/1.08 'Playfair Display',serif;margin:8px 0 14px;color:#fff6d8}.modal-desc{font-size:17px;color:#d3d9e2;margin:0 0 22px}.modal-price{display:flex;justify-content:space-between;gap:20px;align-items:center;background:rgba(203,168,66,.08);border:1px solid var(--border);border-radius:18px;padding:16px 18px;margin:18px 0 24px}.modal-price span{color:var(--muted);font-weight:700}.modal-price strong{color:var(--gold2);font-size:25px}.modal-section{margin:24px 0}.modal-section h3{margin:0 0 12px;font-size:14px;text-transform:uppercase;letter-spacing:.11em;color:var(--gold2)}.modal-section ul{margin:0;padding-left:20px;color:#d8deea}.modal-section li{margin:8px 0}.chips,.option-list{display:flex;gap:9px;flex-wrap:wrap}.mini-chip,.option-pill{border:1px solid var(--border);border-radius:999px;padding:9px 12px;background:rgba(203,168,66,.08);color:#f8edc8;font-size:13px;font-weight:700}.option-pill{background:rgba(228,199,102,.14);color:var(--gold2)}.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.related-card{text-align:left;border:1px solid var(--border);border-radius:16px;background:rgba(10,23,41,.7);color:var(--text);overflow:hidden;cursor:pointer;padding:0;transition:.2s}.related-card:hover{transform:translateY(-2px);border-color:rgba(203,168,66,.58)}.related-card img{width:100%;height:88px;object-fit:cover}.related-card span{display:block;padding:10px 10px 2px;font-size:12px;font-weight:800;color:white;line-height:1.25}.related-card strong{display:block;padding:0 10px 10px;color:var(--gold2);font-size:13px}.modal-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.modal-actions .btn{flex:1 1 220px}@media(max-width:880px){.modal-grid{grid-template-columns:1fr;padding:0 22px 28px}.modal-image-wrap{position:relative;top:auto;min-height:260px}.modal-image-wrap img{min-height:260px;max-height:420px}.related-grid{grid-template-columns:1fr 1fr}.modal-close{top:12px;left:calc(100% - 58px)}}@media(max-width:560px){.modal-card{width:calc(100% - 16px);margin:8px auto;border-radius:20px;max-height:calc(100vh - 16px)}.modal-grid{padding:0 16px 22px;gap:18px}.modal-content h2{font-size:32px}.modal-desc{font-size:15px}.modal-price{align-items:flex-start;flex-direction:column}.related-grid{grid-template-columns:1fr}.related-card{display:grid;grid-template-columns:88px 1fr;align-items:center}.related-card img{height:100%;min-height:74px}.modal-actions .btn{width:100%}}
+
+/* Ajuste Casa Gusto: modal de produto mais compacto no desktop.
+   Objetivo: aproveitar melhor a altura da tela e evitar rolagem em notebooks. */
+@media (min-width: 881px) {
+  .modal-card {
+    width: min(1240px, calc(100% - 24px));
+    max-height: calc(100dvh - 24px);
+    margin: 12px auto;
+    overflow: hidden;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    left: auto;
+  }
+
+  .modal-grid {
+    grid-template-columns: minmax(330px, 40%) 1fr;
+    gap: 26px;
+    height: calc(100dvh - 24px);
+    min-height: 0;
+    padding: 30px 34px;
+  }
+
+  .modal-image-wrap {
+    position: relative;
+    top: auto;
+    height: 100%;
+    min-height: 0;
+    max-height: calc(100dvh - 84px);
+  }
+
+  .modal-image-wrap img {
+    height: 100%;
+    min-height: 0;
+  }
+
+  .modal-content {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: start;
+    gap: 9px 18px;
+    padding-right: 44px;
+  }
+
+  .modal-content > .category-label,
+  .modal-content > h2,
+  .modal-content > .modal-desc,
+  .modal-content > .modal-price,
+  .modal-content > #modalOptionsBlock,
+  .modal-content > .modal-actions {
+    grid-column: 1 / -1;
+  }
+
+  .modal-content h2 {
+    font-size: clamp(30px, 3.2vw, 48px);
+    line-height: 1.02;
+    margin: 4px 0 6px;
+  }
+
+  .modal-desc {
+    font-size: 15px;
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  .modal-price {
+    padding: 10px 14px;
+    margin: 4px 0 4px;
+    border-radius: 14px;
+  }
+
+  .modal-price strong {
+    font-size: 22px;
+  }
+
+  .modal-section {
+    margin: 2px 0;
+  }
+
+  .modal-section h3 {
+    font-size: 12px;
+    margin-bottom: 7px;
+  }
+
+  .modal-section ul {
+    padding-left: 18px;
+  }
+
+  .modal-section li {
+    margin: 3px 0;
+    font-size: 13.5px;
+    line-height: 1.35;
+  }
+
+  .mini-chip,
+  .option-pill {
+    padding: 6px 9px;
+    font-size: 12px;
+  }
+
+  .related-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .related-card {
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    align-items: center;
+    min-height: 58px;
+  }
+
+  .related-card img {
+    width: 58px;
+    height: 100%;
+    min-height: 58px;
+  }
+
+  .related-card span {
+    padding: 6px 7px 0;
+    font-size: 10.5px;
+    line-height: 1.15;
+  }
+
+  .related-card strong {
+    padding: 1px 7px 6px;
+    font-size: 11px;
+  }
+
+  .modal-actions {
+    margin-top: 4px;
+  }
+
+  .modal-actions .btn {
+    min-height: 44px;
+    padding: 11px 18px;
+  }
+}
+
+@media (min-width: 881px) and (max-height: 720px) {
+  .modal-card {
+    max-height: calc(100dvh - 16px);
+    margin: 8px auto;
+  }
+
+  .modal-grid {
+    height: calc(100dvh - 16px);
+    padding: 24px 28px;
+    gap: 22px;
+  }
+
+  .modal-image-wrap {
+    max-height: calc(100dvh - 64px);
+  }
+
+  .modal-content {
+    gap: 7px 16px;
+    padding-right: 40px;
+  }
+
+  .modal-content h2 {
+    font-size: clamp(28px, 3vw, 42px);
+    margin-bottom: 4px;
+  }
+
+  .modal-desc {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .modal-price {
+    padding: 8px 12px;
+  }
+
+  .modal-price strong {
+    font-size: 20px;
+  }
+
+  .modal-section h3 {
+    font-size: 11px;
+    margin-bottom: 5px;
+  }
+
+  .modal-section li {
+    font-size: 12.8px;
+    margin: 2px 0;
+  }
+
+  .mini-chip,
+  .option-pill {
+    padding: 5px 8px;
+    font-size: 11.5px;
+  }
+
+  .related-card {
+    grid-template-columns: 48px 1fr;
+    min-height: 50px;
+  }
+
+  .related-card img {
+    width: 48px;
+    min-height: 50px;
+  }
+
+  .related-card span {
+    font-size: 10px;
+  }
+
+  .related-card strong {
+    font-size: 10.5px;
+  }
+}
